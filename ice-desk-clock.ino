@@ -143,6 +143,8 @@ void pngDraw(PNGDRAW *pDraw) {
   tft.pushImage(xpos, ypos + pDraw->y, pDraw->iWidth, 1, lineBuffer);
 }
 
+// https://github.com/Bodmer/TFT_eSPI/issues/142
+
 void setup(void){
 
   // Initialization
@@ -151,7 +153,7 @@ void setup(void){
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
   // Set display rotation
-  tft.setRotation(0);
+  tft.setRotation(1);
 
   // Clear display
   tft.fillScreen(0);
@@ -216,7 +218,7 @@ void display(){
 
   // Display WxH
   int display_w = 240;
-  int display_h = 240;
+  // int display_h = 240;
 
   // Distance between items
   int padding = 8;
